@@ -75,10 +75,12 @@ Voici le contenu (contenu imposé) de votre nouveau fichier index.html
 </body>
 </html>
 ```
-Modifier votre playbook afin de :  
+Modifier votre playbook afin de :
 * Créer un title contenant le texte suivant : "Serveur déployé avec Ansible"
 * L'auteur sera : "Votre nom"
 * L'utilisateur sera un **utilisateur Linux** : "Votre prénom"
+
+Dans cette version, la page HTML est générée par un template Jinja2. Les variables `page_title`, `page_author` et `app_user` sont injectées depuis le playbook.
   
 ---------------------------------------------------
 Séquence 4 : Questions  
@@ -90,27 +92,43 @@ Faites preuve de pédagogie et soyez clair dans vos explications et procedures d
 **Question 1 :**  
 Pourquoi Ansible est-il qualifié d’outil "déclaratif" ?    
   
-*..Répondez à cet exercice ici..*
+*Ansible est qualifié de déclaratif car on décrit l’état final souhaité du système, et non les étapes précises pour y arriver.*
 
 **Question 2 :**  
 Pourquoi l’utilisation de variables est-elle essentielle dans un playbook ?  
   
-*..Répondez à cet exercice ici..*
+*Les variables sont essentielles car elles rendent les playbooks : réutilisables, flexibles et faciles à maintenir*
 
 **Question 3 :**  
 En quoi Ansible facilite-t-il la gestion de plusieurs serveurs ?  
   
-*..Répondez à cet exercice ici..*
+*Ansible facilite la gestion de plusieurs serveurs grâce à :
+l’exécution centralisée, la gestion de groupes d’hôtes et l’automatisation en parallèle*
 
 **Question 4 :**  
 Quels sont les avantages et les limites d’Ansible dans un contexte DevOps ?   
   
-*..Répondez à cet exercice ici..*
+  - *Avantages :*
+*Simple à utiliser (pas besoin d’agent), Automatisation rapide des déploiements, Idempotence (répétable sans erreur), Très adapté aux environnements DevOps*
+  - *Limites :*
+*Moins performant pour très grandes infrastructures, Dépend du SSH (peut être lent à grande échelle), Moins adapté aux systèmes très dynamiques (cloud très évolutif)*
+  - *SSH est un outil qui permet de contrôler un ordinateur à distance de manière sécurisée, très utilisé en administration système et en DevOps.*
   
 **Question 5 :**  
 Quelle est la différence entre les modules copy et template dans Ansible ?   
   
-*..Répondez à cet exercice ici..*
+- *Dans Ansible :*
+  - *copy*
+    - *Copie un fichier tel quel vers une machine distante*
+    - *Aucun changement dans le contenu*
+    - *Exemple : copier un fichier de configuration fixe*
+  - *template*
+    - *Utilise un fichier avec des variables (Jinja2)*
+    - *Génère un fichier personnalisé selon la machine*
+    - *Exemple : config avec {{ port }} ou {{ hostname }}*
+- *Résumé :*
+  - *copy = fichier statique*
+  - *template = fichier dynamique*
 
 ---------------------------------------------------
 Séquence 5 : Atelier  
