@@ -8,9 +8,6 @@
     page_dest: /var/www/html/index.html
     yarn_repo_file: /etc/apt/sources.list.d/yarn.list
     yarn_repo_disabled_file: /etc/apt/sources.list.d/yarn.list.disabled
-    page_title: "Serveur déployé avec Ansible"
-    author: "POLLET"
-    app_user: "Wesley"
   tasks:
     - name: Afficher le système cible
       debug:
